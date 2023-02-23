@@ -1,0 +1,60 @@
+func substr(__str, __start, __end)
+    if not __start > __end
+        __result = ''
+        while __start <= __end
+            __result = __result + __str[__start]
+            __start = __start + 1
+        end
+        return __result
+    else if __start == __end
+        return __str[__start]
+    end
+end
+
+func endswith(__str, __val)
+    if len(__str) > len(__val)
+        return substr(__str, len(__val)*-1, -1) == __val
+    else if len(__str) == len(__val)
+        return __str == __val
+    end
+    return false
+end
+
+func startswith(__str, __val)
+    if len(__str) > len(__val)
+        return substr(__str, 0, len(__val)-1) == __val
+    else if len(__str) == len(__val)
+        return __str == __val
+    end
+    return false
+end
+
+func reverse(__str)
+    i = -1
+    __result = ''
+    while abs(i) <= len(__str)
+        __result = __result + __str[i]
+        i = i - 1
+    end
+    return __result
+end
+
+func split(__str, __val)
+    __result = []
+    __substr = ''
+    i = 0
+
+    while i + len(__val)-1 < len(__str)
+        if substr(__str, i, i + len(__val)-1) == __val
+            __result = __result + [__substr]
+            __substr = ''
+            i = i + len(__val)
+        else
+            __substr = __substr + __str[i]
+            i = i + 1
+        end
+    end
+    __result = __result + [__substr]
+
+    return __result
+end

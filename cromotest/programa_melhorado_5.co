@@ -1,0 +1,32 @@
+operations = [
+    [add, 'soma', '+'],
+    [min, 'subtração', '-'],
+    [mul, 'multiplicação', '*'],
+    [div, 'divisão', '/'],
+    [pot, 'potenciação', '**']
+]
+
+func makeOperation()
+    if op >= 1 and op <= len(operations)
+        op = op-1
+
+        num1 = inpnum('Digite o primeiro numero: ', errInpNum)
+        num2 = inpnum('Digite o segundo numero: ', errInpNum)
+        
+        print('\n' + str(num1), operations[op][2], num2, '=', operations[op][0](num1, num2))
+    else
+        print('\nDigite uma opção correta')
+    end
+end
+
+errInpNum = '\nDigite apenas numeros'
+
+print("\nSelecione a operação desejada:\n\n1 - SOMA\n2 - SUBTRAÇÃO\n3 - MULTIPLICAÇÃO\n4 - DIVISÃO\n5 - POTENCIAÇÃO\n\n0 - PARA SAIR\n")
+op = inpnum('Escolha uma opção[1-5]: ', errInpNum)
+
+while op != 0
+    makeOperation()
+
+    print("\nSelecione a operação desejada:\n\n1 - SOMA\n2 - SUBTRAÇÃO\n3 - MULTIPLICAÇÃO\n4 - DIVISÃO\n5 - POTENCIAÇÃO\n\n0 - PARA SAIR\n")
+    op = inpnum('Escolha uma opção[1-5]: ', errInpNum)
+end

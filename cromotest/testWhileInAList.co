@@ -1,0 +1,8 @@
+list = [1, 2, 'ola', true]
+
+i = 0
+while i < len(list)
+    print(str(i) + ':', type(list[i]), list[i])
+    i = i+1
+end
+

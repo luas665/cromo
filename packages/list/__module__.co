@@ -1,0 +1,45 @@
+func push_back(__list, value)
+    return __list + [value]
+end
+
+func reverse_list(__list)
+    i = -1
+    __result = []
+    while abs(i) <= len(__list)
+        __result = push_back(__result, __list[i])
+        i = i - 1
+    end
+    return __result
+end
+
+func any(__list)
+    i = 0
+    while i < len(__list)
+        if bool(__list[i])
+            return true
+        end
+        i = i + 1
+    end
+    return false
+end
+
+func all(__list)
+    i = 0
+    while i < len(__list)
+        if not bool(__list[i])
+            return false
+        end
+        i = i + 1
+    end
+    return true
+end
+
+func sum(__list)
+    __result = 0
+    i = 0
+    while i < len(__list)
+        __result = __result + __list[i]
+        i = i + 1
+    end
+    return __result
+end

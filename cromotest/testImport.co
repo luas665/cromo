@@ -1,0 +1,13 @@
+func sum(a, b)
+	return a + b
+end
+
+func sumList(l)
+	result = 0
+	i = 0
+	while i < len(l)
+		result = result + l[i]
+		i = i + 1
+	end
+	return result
+end

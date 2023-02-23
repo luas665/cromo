@@ -1,0 +1,3 @@
+print('Bem vindo ao primeiro programa feito em CROMO!')
+name = input('Digite seu nome: ')
+print('ola', name, '!')
